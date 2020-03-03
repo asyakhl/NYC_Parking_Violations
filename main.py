@@ -8,19 +8,21 @@ if __name__ == "__main__":
 			for i in range(len(content)):
 				res_out.write(f"{content[i]}\n")
 			return res_out
-	
-	if len(argv)==2:
-		print(get_parking_violations(int(argv[1])))
-	elif argv[2]=="results.json":
-		result = get_parking_violations(int(argv[1]))
-		to_json_file(argv[2],result)
-	elif len(argv)==3:
-		print(get_parking_violations(int(argv[1]), int(argv[2])))
-	elif len(argv)==4:
-		result = get_parking_violations(int(argv[1]), int(argv[2]))
-		to_json_file(argv[3],result)
-	else:
-		print("error")
+	try:
+		if len(argv)==2:
+			print(get_parking_violations(int(argv[1])))
+		elif argv[2]=="results.json":
+			result = get_parking_violations(int(argv[1]))
+			to_json_file(argv[2],result)
+		elif len(argv)==3:
+			print(get_parking_violations(int(argv[1]), int(argv[2])))
+		elif argv[3]=="results.json":
+			result = get_parking_violations(int(argv[1]), int(argv[2]))
+			to_json_file(argv[3],result)
+		else:
+			print("Output file name must be results.json")
+	except ValueError as e:
+	 	print(f"Use integer: {e}")
 
 
 

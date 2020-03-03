@@ -8,7 +8,7 @@ def get_parking_violations(page_size: int, page_num: int=None) -> list:
 	total = client.get("nc67-uf89", select='COUNT(*)')
 	total = int(total[0]["COUNT"])
 
-	total_num_pages = total//page_size+1# total number of calls/page size
+	total_num_pages = total//page_size+1 # total number of calls/page size
 
 	output = []
 	if page_num==None:
