@@ -21,19 +21,19 @@ if __name__ == "__main__":
 				res_out.write(f"{content[i]}\n")
 			return res_out
 	
-		if len(argv)==2:
-		 		print(get_parking_violations(int(args["page_size"])))
-		elif len(argv)==3:
+	if len(argv)==2:
+	 		print(get_parking_violations(int(args["page_size"])))
+	elif len(argv)==3:
 
-			if "--output" in args_list:
-				result = get_parking_violations(int(args["page_size"]))
-				to_json_file(args["output"],result)
-			else:
-				print(get_parking_violations(int(args["page_size"]), int(args["page_num"])))
-
-		elif len(argv)==4:
-			result = get_parking_violations(int(args["page_size"]), int(args["page_num"]))
+		if "--output" in args_list:
+			result = get_parking_violations(int(args["page_size"]))
 			to_json_file(args["output"],result)
+		else:
+			print(get_parking_violations(int(args["page_size"]), int(args["page_num"])))
+
+	elif len(argv)==4:
+		result = get_parking_violations(int(args["page_size"]), int(args["page_num"]))
+		to_json_file(args["output"],result)
 		
 	
 	
