@@ -9,6 +9,7 @@ def create_and_update_index(index_name, doc_table):
 		es.indices.create(index=index_name)
 	except Exception:
 		pass
+	
 
 	return es
 

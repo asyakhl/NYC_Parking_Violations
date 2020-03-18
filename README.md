@@ -20,3 +20,37 @@ $ docker run -e APP_KEY=YOUR_APP_TOKEN -t nyc_parking_violations:1.0 python -m m
 available content. 
 
 --output: This argument is optional, if not included results will be printed to stdout. 
+
+# Loading NYC Open Parking and Camera Violations API Results into Elasticsearch Using Docker-Compose
+
+## Loading Data into Elastic Search
+
+The docker-compose.yml file was used here for three docker containers. The main.py was altered to load data into elasticsearch. 
+
+$ docker-compose run -e APP_KEY=YOUR_APP_TOKEN pyth python -m main --page_size=100 --page_num=1000
+
+$ docker-compose run -e APP_KEY=YOUR_APP_TOKEN pyth python -m main --page_size=100 --page_num=1000 --output=results.json
+
+100,000 of 48 million rows of data were loaded into elasticsearch, the data can then be further processed in Kibana dev tools.
+
+## Kibana Visualizations
+
+The following images were created in Kibana using the 100,000 rows that were loaded into the elasticsearch. 
+
+Ten most popular parking violations.
+
+<img src="/popular_violations.png" width="400">
+
+The average fine reduction amount by county.
+
+<img src="/average_reduction_by_county" width="400">
+
+The below table contains county data for median fine amount, count of parking violations, and maximum fine reduction.
+
+<img src="/table_by_county.png" width="400">
+
+Parking violations per year for a 10 year period. 
+
+<img src="/violations_by_year.png" width="400">
+
+

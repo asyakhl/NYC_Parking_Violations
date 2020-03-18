@@ -46,7 +46,17 @@ if __name__ == "__main__":
 
 	for viol in list_park_viol:
 		viol["timestamp"]= datetime.now()
-
+		viol["issue_date"]=datetime.strptime(viol["issue_date"], "%m/%d/%Y")
+		if "penalty_amount" in viol:
+			viol["fine_amount"]=float(viol["fine_amount"])
+		if "interest_amount" in viol:
+			viol["interest_amount"]=float(viol["interest_amount"])
+		if "reduction_amount" in viol:
+			viol["reduction_amount"]=float(viol["reduction_amount"])
+		if "payment_amount" in viol:
+			viol["payment_amount"]=float(viol["payment_amount"])
+		if "amount_due" in viol:
+			viol["amount_due"]=float(viol["amount_due"])
 		res = es.index(index="parking_violation_records", doc_type="records", body = viol)
 		print(res["result"])
 
