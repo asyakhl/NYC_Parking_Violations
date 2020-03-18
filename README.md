@@ -31,11 +31,11 @@ $ docker-compose run -e APP_KEY=YOUR_APP_TOKEN pyth python -m main --page_size=1
 
 $ docker-compose run -e APP_KEY=YOUR_APP_TOKEN pyth python -m main --page_size=100 --page_num=1000 --output=results.json
 
-100,000 of 48 million rows of data were loaded into elasticsearch, the data can then be further processed in Kibana dev tools.
+100,000 of 48 million OPCV API rows of data were loaded into elasticsearch, the data can then be further processed in Kibana dev tools.
 
 ## Kibana Visualizations
 
-The following images were created in Kibana using the 100,000 rows that were loaded into the elasticsearch. 
+The following images were created in Kibana using the 100,000 rows from OPCV API that were loaded into the elasticsearch. 
 
 Ten most popular parking violations.
 
