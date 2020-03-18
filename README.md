@@ -39,18 +39,18 @@ The following images were created in Kibana using the 100,000 rows that were loa
 
 Ten most popular parking violations.
 
-<img src="img/popular_violations.png" width="470">
+<img src="img/popular_violations.png" width="530">
 
 The average fine reduction amount by county.
 
-<img src="img/average_reduction_by_county.png" width="470">
+<img src="img/average_reduction_by_county.png" width="530">
 
 The below table contains county data for median fine amount, count of parking violations, and maximum fine reduction.
 
-<img src="img/table_by_county.png" width="470">
+<img src="img/table_by_county.png" width="530">
 
 Parking violations per year for a 10 year period. 
 
-<img src="img/violations_by_year.png" width="470">
+<img src="img/violations_by_year.png" width="530">
 
 
