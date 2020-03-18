@@ -8,7 +8,7 @@ The data is pulled from [Open Parking and Camera Violations](https://dev.socrata
 
 ## Docker Image for Accessing the API
 
-The docker image for retrieving data from OPCV API can be pulled from [this dockerhub profile](https://hub.docker.com/u/asyakhleborodova). The following command line can be used to access OPCV API data.
+The docker image for retrieving data from OPCV API can be pulled from [this dockerhub profile](https://hub.docker.com/u/asyakhleborodova), under **nyc_parking_violations** repository. The following command line can be used to access OPCV API data.
 
 ## Using the API 
 
@@ -25,7 +25,9 @@ available content.
 
 ## Loading Data into Elastic Search
 
-The docker-compose.yml file was used here for three docker containers. The main.py was altered to load data into elasticsearch. 
+The docker-compose.yml file was used here to configure three services. The main.py was altered to load data into elasticsearch. 
+
+The docker image for retrieving data from OPCV API and loading it into elasticsearch can be pulled from [this dockerhub profile](https://hub.docker.com/u/asyakhleborodova), under **nyc_parking_violations_elasticsearch_kibana** repository.
 
 $ docker-compose run -e APP_KEY=YOUR_APP_TOKEN pyth python -m main --page_size=100 --page_num=1000
 
